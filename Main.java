@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +11,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> userChoices = new ArrayList<Integer>(); 
         int totalPoints = 0;  
+
+        // for pictures:
+        DisplayImage breakfastImage = new DisplayImage();
+        JFrame morningBreakfast = new JFrame();
+        DisplayImage lovingNathaniel = new DisplayImage();
+        JFrame end1 = new JFrame();
+        DisplayImage friendlyNathaniel = new DisplayImage();
+        JFrame end2 = new JFrame();
+        DisplayImage evilNathaniel = new DisplayImage();
+        JFrame end3 = new JFrame();
+
 
         System.out.println("  ");
         System.out.println("Welcome to the Castle of Hearts a legendary castle known for its magical power to bring true love to those who are worthy.");
@@ -198,8 +209,11 @@ public class Main {
         System.out.println("");
         System.out.println("Out come plates upon plates of fruit, muffins, danishes, donuts, waffles, eggs, bagels, fresh bread, and various spreads and jams while you and Nathaniel chat at breakfast.");
         game.pressReturn();
-        //food pictures go here
 
+        //food pictures go here
+        morningBreakfast.add(breakfastImage);
+        morningBreakfast.setSize(615, 500);
+        morningBreakfast.setVisible(true); 
 
         System.out.println("");
         System.out.println("\uD83E\uDD34" + ": " + "Well then, shall we eat?");
@@ -342,7 +356,7 @@ public class Main {
         game.pressReturn();
 
         //ENDING NO.1 LOVING NATHANIEL
-        if(totalPoints >=12){
+        if(totalPoints >= 12){
             System.out.println("");
             System.out.println("\uD83E\uDD34" + ": " + "Listen traveler, this alarm means that someone has stolen one of the treasures left behind in this castle. They are not meant to fall into the wrong hands.");
             game.pressReturn();
@@ -389,11 +403,15 @@ public class Main {
             game.pressReturn();
             System.out.println("You've unlocked Ending No.1 LOVING NATHANIEL");
             System.out.println("");
-            
+
+            // loving Nathaniel heart goes here
+            end1.add(lovingNathaniel);
+            end1.setSize(175, 300);
+            end1.setVisible(true);
 
 
 
-        }else if(totalPoints>=9 && totalPoints < 12){
+        }if(totalPoints >= 9 && totalPoints < 12){
 
             System.out.println("\uD83E\uDD34" + ": " + "This alarm goes off when someone has taken one of our precious treasures. Come on, traveler!");
             System.out.println("");
@@ -422,7 +440,13 @@ public class Main {
             System.out.println("You've unlocked Ending No.2 FRIENDLY NATHANIEL");
             System.out.println("");
 
-        }else if (totalPoints < 9){
+            //friendly Nathaniel hearts go here
+            end2.add(friendlyNathaniel);
+            end2.setSize(350, 300); 
+            end2.setVisible(true); 
+
+        // }if (totalPoints < 9){
+        } else {
 
             System.out.println("\uD83E\uDD34" + ": " + "This alarm is going off because of you, traveler! You have brought great misfortune upon my castle and my family. I was a prince in the royal family that lived here once, and I was put in charge of protecting this castle from our curse. You have distracted me from my purpose, and now you will face the consequences.");
             System.out.println("");
@@ -444,6 +468,11 @@ public class Main {
             game.pressReturn();
             System.out.println("You've unlocked Ending No.3 EVIL NATHANIEL");
             System.out.println("");
+
+            // evil Nathaniel heart goes here
+            end3.add(evilNathaniel);
+            end3.setSize(800, 700);
+            end3.setVisible(true); 
 
         }
 

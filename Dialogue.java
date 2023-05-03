@@ -1,10 +1,12 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Dialogue {
 
     private Scanner scanner = new Scanner(System.in);
     ArrayList<Integer> userChoices = new ArrayList<Integer>();
+    private int redoCounter = 0;
+
 
     // method for displaying simple text dialogue
     public void displayDialogue(String text) {
@@ -22,9 +24,9 @@ public class Dialogue {
             System.out.println("Invalid choice. Please enter a number between 1 and " + choices.length + ".");
             choice = scanner.nextInt();
         }
-        userChoices.add(choice);
         System.out.println("You chose: " + choices[choice-1]);
         System.out.println("You earned " + points[choice-1] + " points.");
+        userChoices.add(choice);
         return points[choice - 1];
     }
 
@@ -32,12 +34,15 @@ public class Dialogue {
         int lastChoice = userChoices.get(userChoices.size() - 1);
         System.out.println(responses[lastChoice - 1]);
         }
+
+    
+        
     
 
 //testing
 public static void main(String[] args) {
     Dialogue dialogue = new Dialogue();
-    ArrayList<Integer>userChoices = new ArrayList<>();
+    ArrayList<Integer> userChoices = new ArrayList<Integer>();
     int totalPoints = 0;
 
     // Conversation 1: Simple text dialogue
@@ -46,17 +51,18 @@ public static void main(String[] args) {
     // Conversation 2: Dialogue with choices and points
     String[] choices1 = {"Choice 1", "Choice 2", "Choice 3"};
     int[] points1 = {10, 20, 30};
-    int pointsEarned1 = dialogue.displayDialogueWithChoices("What is your favorite choice?", choices1, points1, userChoices);
+    int pointsEarned1 = dialogue.displayDialogueWithChoices("What is your favorite choice?", choices1, points1,userChoices);
     totalPoints += pointsEarned1;
+
+
 
     // Conversation 3: Dialogue with choices and points
     String[] choices2 = {"Choice A", "Choice B", "Choice C"};
     int[] points2 = {5, 15, 25};
-    int pointsEarned2 = dialogue.displayDialogueWithChoices("What is your second favorite choice?", choices2, points2, userChoices);
+    int pointsEarned2 = dialogue.displayDialogueWithChoices("What is your second favorite choice?", choices2, points2,userChoices);
     totalPoints += pointsEarned2;
 
     // Conversation 4: Simple text dialogue
     dialogue.displayDialogue("Thanks for playing! Your total points earned are: " + totalPoints);
-
-    }
+}
 }

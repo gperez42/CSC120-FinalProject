@@ -2,9 +2,6 @@ import java.awt.*;
 import javax.swing.JFrame;
 
 public class DisplayImage extends Canvas { 
-
-    
-
     public void paint(Graphics g) {
         // ONE LAST IMAGE
         Toolkit t=Toolkit.getDefaultToolkit();  

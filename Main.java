@@ -648,6 +648,6 @@ public class Main {
         System.out.println("Thank you for playing our game!");
         System.out.println("Best, Jiaqi and Glenvelis");
         
-
+        scanner.close();
     }
 }
